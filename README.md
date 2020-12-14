@@ -1,4 +1,5 @@
 # Mphasis
+## "go run app.go" to start the server
 
 ## End Point(Image Get) - /image
 ### Request Method - GET
