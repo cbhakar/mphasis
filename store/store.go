@@ -94,7 +94,7 @@ func GetImages(qParams QueryDetails) ([]Image, error) {
 	}
 	q.LogMode(true)
 	q = q.Find(&images)
-	if errors.Is(q.Error, gorm.ErrRecordNotFound) {
+	if q.Error == gorm.ErrRecordNotFound {
 		return images, errors.New("no record found")
 	}
 	return images, nil

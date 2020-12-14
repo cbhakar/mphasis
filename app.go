@@ -37,11 +37,11 @@ func startApp() {
 
 func HandleOSSignals(fn func()) {
 	signals := make(chan os.Signal, 1)
-	signal.Notify(signals, syscall.SIGUSR1, syscall.SIGINT, syscall.SIGTERM)
+	signal.Notify(signals,  syscall.SIGINT, syscall.SIGTERM)
 
 	for sig := range signals {
 		switch sig {
-		case syscall.SIGINT, syscall.SIGUSR1, syscall.SIGTERM:
+		case syscall.SIGINT, syscall.SIGTERM:
 			fn()
 		}
 	}
