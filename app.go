@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/gorilla/mux"
 	"github.com/cbhakar/mphasis/api"
+	"github.com/gorilla/mux"
 	"log"
 	"net/http"
 	"os"
@@ -37,7 +37,7 @@ func startApp() {
 
 func HandleOSSignals(fn func()) {
 	signals := make(chan os.Signal, 1)
-	signal.Notify(signals,  syscall.SIGINT, syscall.SIGTERM)
+	signal.Notify(signals, syscall.SIGINT, syscall.SIGTERM)
 
 	for sig := range signals {
 		switch sig {

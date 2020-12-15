@@ -87,13 +87,7 @@ func GetImages(w http.ResponseWriter, r *http.Request) {
 		json.NewEncoder(w).Encode(err)
 		return
 	}
-	if qParms.Size, ok = utils.CheckIntValue(size); !ok && size != "" {
-		err := map[string]interface{}{"message": "size should be a integer value"}
-		w.Header().Set("Content-type", "application/json")
-		w.WriteHeader(http.StatusBadRequest)
-		json.NewEncoder(w).Encode(err)
-		return
-	}
+
 	qParms.Order = queryParams.Get("order")
 	if ok = utils.StrInListStatus(qParms.Order, sortOrderList); !ok && qParms.Order != "" {
 		err := map[string]interface{}{"message": "enter a valid sort order parameter"}

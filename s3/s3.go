@@ -16,7 +16,7 @@ const (
 	bucketName      = ""
 	accessKeyId     = ""
 	accessSecretKey = ""
-	region          = "ap-south-1"
+	region          = ""
 )
 
 var (

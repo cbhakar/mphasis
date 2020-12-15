@@ -48,11 +48,11 @@ type Image struct {
 	CreatedAt string `gorm:"not null" json:"created_at"`
 }
 type QueryDetails struct {
-	ImageId   int
+	ImageId int
 	Page    int
-	Size     int
-	Sort string
-	Order    string
+	Size    int
+	Sort    string
+	Order   string
 }
 
 func AddImage(imageDetails Image) (err error) {

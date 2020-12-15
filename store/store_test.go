@@ -49,9 +49,7 @@ func (s *Suite) TestGetImage() {
 		time = time.Now().Format("2006-01-02 15:04:05")
 	)
 	mockedRow := sqlmock.NewRows([]string{"image_id", "image_name", "created_at"}).AddRow(id, name, time)
-	s.mock.ExpectQuery(regexp.QuoteMeta(`SELECT * FROM "images" WHERE (image_id= $1)`)).
-		WithArgs(id).
-		WillReturnRows(mockedRow)
+	s.mock.ExpectQuery(regexp.QuoteMeta(`SELECT * FROM "images" WHERE (image_id= $1)`)).WithArgs(id).WillReturnRows(mockedRow)
 	res, err := GetImages(QueryDetails{
 		ImageId: id,
 	})
