@@ -1,4 +1,6 @@
 # Mphasis
+
+## Update config in store.go & s3.go
 ## "go run app.go" to start the server
 
 ## End Point(Image Get) - /image
